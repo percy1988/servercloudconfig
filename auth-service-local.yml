@@ -1,5 +1,6 @@
 server:
   port: 9091
+spring:
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
