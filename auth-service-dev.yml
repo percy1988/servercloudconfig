@@ -1,6 +1,8 @@
 server:
   port: 9091
 spring:
+  application:
+    name: auth-service
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
