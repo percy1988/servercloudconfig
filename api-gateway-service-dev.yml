@@ -11,18 +11,13 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: account-service
-          uri: lb://account-service
+        - id: auth-service
+          uri: lb://auth-service
           predicates:
-            - Path=/account/**
+            - Path=/api/auth/**
           filters:
-            - RewritePath=/account/(?<path>.*), /$\{path}
-        - id: customer-service
-          uri: lb://customer-service
-          predicates:
-            - Path=/customer/**
-          filters:
-            - RewritePath=/customer/(?<path>.*), /$\{path}
+            - RewritePath=/api/auth/(?<path>.*), /$\{path}
+        
 eureka:
   client:
     registerWithEureka: true
